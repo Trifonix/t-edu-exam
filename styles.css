@@ -1,0 +1,278 @@
+* {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+:root {
+    --green-color: #28D979;
+}
+
+body {
+    margin: 15px;
+    padding: 0;
+    font-family: Arial, sans-serif, monospace;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.row-limited-height {
+    display: flex;
+    align-items: stretch;
+}
+
+.profile-background {
+    background-image: url('profile.png');
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+
+.block {
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background-color: #e0ddff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.block img {
+    border-radius: 12px;
+}
+
+.langs {
+    margin-bottom: 1.2em;
+    font-weight: bold;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.language p {
+    margin: 0;
+    flex: 1;
+}
+
+.progress-bar {
+    flex: 4;
+    height: 20px;
+    background-color: lightgray;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.progress {
+    height: 20px;
+    background-color: var(--green-color);
+    border-radius: 12px;
+}
+
+.experience-card {
+    background-color: var(--green-color);
+    border-radius: 12px;
+}
+
+.block-25 {
+    width: 25%;
+}
+
+.block-50 {
+    width: 50%;
+}
+
+.block-75 {
+    width: 75%;
+}
+
+.editable {
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+    border-radius: 12px;
+    font-size: 1.6em;
+}
+
+.editable:hover {
+    border-color: #ccc;
+    cursor: pointer;
+}
+
+.editable:focus {
+    border-color: #1E90FF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+}
+
+.material-wave {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease;
+    user-select: text;
+}
+
+.material-wave:after {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    transform: scale(0);
+    width: 120px;
+    height: 120px;
+    transition: transform 0.5s ease, opacity 1s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.material-wave:active:after {
+    transform: scale(4);
+    opacity: 0;
+    transition: transform 0s, opacity 0s;
+}
+
+.material-wave:active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    user-select: none;
+}
+
+#download-button {
+    margin: 10px 20px;
+    background-color: var(--green-color);
+    color: white;
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.greeting {
+    font-size: 14px;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0.4em;
+}
+
+.title {
+    font-size: 18px;
+    color: gray;
+    margin: 0;
+}
+
+.language {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.interest-tag {
+    display: inline-block;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 5px 10px;
+    margin: 5px 5px 0 0;
+    font-size: 1.4em;
+}
+
+.education-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(50% - 15px), 1fr));
+    gap: 15px;
+}
+
+.card {
+    padding: 10px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.card-green {
+    background-color: var(--green-color);
+    color: #FFFFFF;
+}
+
+.card .year,
+.card .skills,
+.card .institution {
+    margin: 5px 0;
+}
+
+.card .year {
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.card .skills {
+    font-style: italic;
+    color: #EBF9F2;
+    font-size: 0.7em;
+    margin-bottom: 12px;
+}
+
+.card .skills-dark {
+    color: #149063;
+}
+
+.card .institution {
+    font-size: 0.8em;
+}
+
+.contact-card {
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.tools-gap {
+    gap: 20px;
+}
+
+.tools-first,
+.tools-second,
+.tools-third {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+
+.tools-first {
+    background-image: url('t1.svg');
+    height: 440px;
+}
+
+.tools-second {
+    background-image: url('t2.svg');
+    height: 200px;
+}
+
+.tools-third {
+    background-image: url('t3.svg');
+    height: 200px;
+}
