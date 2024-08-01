@@ -18,9 +18,12 @@
 - **CSS:** Стилизация и верстка.
 - **JavaScript:** Экспорт в PDF через `html2pdf`.
 
-## Как открыть
+## Как посмотреть
 
-1. Склонируйте репозиторий:
+Посмотрите развернутый проект [ТУТ](https://trifonix.github.io/t-edu-exam/).
 
-   ```bash
-   git clone https://github.com/Trifonix/t-edu-exam.git
+Или склонируйте репозиторий:
+
+```bash
+git clone https://github.com/Trifonix/t-edu-exam.git
+```
