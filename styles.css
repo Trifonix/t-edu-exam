@@ -256,7 +256,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-size: 100%;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 12px;
@@ -275,4 +275,77 @@ body {
 .tools-third {
     background-image: url('t3.svg');
     height: 200px;
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+
+    .block-25, .block-50, .block-75 {
+        width: 100%;
+    }
+
+    .education-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .profile-background {
+        height: 200px;
+    }
+
+    .block {
+        padding: 10px;
+    }
+
+    .editable {
+        font-size: 1.4em;
+    }
+
+    .greeting {
+        font-size: 12px;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .interest-tag {
+        font-size: 1.2em;
+    }
+
+    .tools-first {
+        height: 260px;
+    }
+    
+    .tools-second {
+        background-image: url('t2.svg');
+        height: 140px;
+    }
+    
+    .tools-third {
+        background-image: url('t3.svg');
+        height: 140px;
+    }
+
+    .contact-card {
+        margin-top: 12px;
+    }
+    
+    .card-mobile {
+        margin-top: 12px;
+    }
+
+    .card-mobile-first {
+        margin-top: 0;
+    }
 }
