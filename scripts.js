@@ -1,23 +1,36 @@
-document.querySelectorAll('.editable').forEach(element => {
-    element.addEventListener('input', () => {
-        element.classList.add('edited');
-        setTimeout(() => {
-            element.classList.remove('edited');
-        }, 500);
-    });
+document.getElementById('download-button').addEventListener('click', function() {
+    downloadPDF();
+    sendWebhookNotification();
 });
 
-document.getElementById('download-button').addEventListener('click', () => {
-    const element = document.querySelector('.container');
-    html2pdf(element);
-});
+function downloadPDF() {
+    const element = document.body;
+    const opt = {
+        margin:       0.5,
+        filename:     'document.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
 
-document.querySelectorAll('.material-wave').forEach(element => {
-    element.addEventListener('click', function (e) {
-        let wave = this.querySelector('::after');
-        let x = e.pageX - this.offsetLeft - 50;
-        let y = e.pageY - this.offsetTop - 50;
-        wave.style.left = `${x}px`;
-        wave.style.top = `${y}px`;
+    html2pdf().from(element).set(opt).save();
+}
+
+function sendWebhookNotification() {
+    const webhookURL = 'https://hooks.zapier.com/hooks/catch/19664207/2uxqt5s/';
+
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ event: 'button_pressed', data: { message: 'Button was pressed' } })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Webhook sent:', data);
+    })
+    .catch(error => {
+        console.error('Error sending webhook:', error);
     });
-});
+}
