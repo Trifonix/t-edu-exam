@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 document.getElementById('download-button').addEventListener('click', function() {
     downloadPDF();
     sendWebhookNotification();
@@ -17,7 +19,7 @@ function downloadPDF() {
 }
 
 function sendWebhookNotification() {
-    const webhookURL = 'https://hooks.zapier.com/hooks/catch/19664207/2uxqt5s/';
+    const webhookURL = process.env.ALBATO_WEBHOOK_URL;
 
     fetch(webhookURL, {
         method: 'POST',
