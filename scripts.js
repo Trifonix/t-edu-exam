@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 document.getElementById('download-button').addEventListener('click', function() {
     downloadPDF();
     sendWebhookNotification();
